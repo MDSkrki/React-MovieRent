@@ -1,0 +1,13 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: lightslategray;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
