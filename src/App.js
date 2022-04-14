@@ -6,11 +6,11 @@ import { useSelector } from 'react-redux';
 
 function App() {
   // Hooks
-  const bannerOpen = useSelector((state) => state.banner.open);
-  
+  const bannerVisible = useSelector((state) => state.banner.visible);
+
   return (
     <div className="App">
-      {bannerOpen && <Banner />}
+      {bannerVisible && <Banner />}
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>
