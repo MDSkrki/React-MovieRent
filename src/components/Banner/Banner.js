@@ -12,6 +12,8 @@ export const Banner = () => {
     const closeButton = () => {
         dispatch(actionCreator(CLOSE_BANNER));
     }
+
+    setTimeout(closeButton, 2500)
     return (
         <div className="Banner">
             <button onClick={closeButton}><CgCloseO /></button>
