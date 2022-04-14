@@ -7,7 +7,8 @@ export const createUser = async (formData) => {
                 'Content-Type': 'application/json',
             }
         })
-        //const user = await res.json(); Commented line because i might need the registered user later
+        const user = await res.json();
+        return user;
     } catch (error) {
         console.log('User registration failed!');
     }
