@@ -1,4 +1,4 @@
-import { OPEN_BANNER } from "../types";
+import { CLOSE_BANNER, OPEN_BANNER } from "../types";
 
 const initialState = {
     open: false,
@@ -10,7 +10,14 @@ export const bannerReducer = (state = initialState, action) => {
         return {
             ...state,
             open: true,
-            text: action.payload,
+            message: action.payload,
+        }
+    }
+
+    if (action.type === CLOSE_BANNER) {
+        return {
+            ...state,
+            open: false,
         }
     }
 

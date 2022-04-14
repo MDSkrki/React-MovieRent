@@ -1,0 +1,9 @@
+.Banner {
+    position: absolute;
+    margin: auto;
+    top: 45vh;
+    left: 45vw;
+    z-index: 1;
+    background-color: lightslategray;
+    padding: 2em;
+}
