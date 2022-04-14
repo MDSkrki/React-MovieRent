@@ -1,0 +1,11 @@
+.Input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.Input input {
+    border-radius: 0.5em;
+    border-color: black;
+}
