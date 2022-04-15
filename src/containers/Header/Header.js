@@ -7,11 +7,12 @@ import './Header.css';
 export const Header = () => {
 
     const loggedState = useSelector((state) => state.user.logged)
+    const usernameState = useSelector((state) => state.user.username);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const openBanner = () => {
-        dispatch(actionCreator(OPEN_BANNER, `You have successfully Logged out!`));
+        dispatch(actionCreator(OPEN_BANNER, `${usernameState} has successfully Logged out!`));
     }
 
     const logoutHandler = () => {
