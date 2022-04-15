@@ -1,20 +1,19 @@
 import './Home.css'
 import { LoremIpsum } from '../../components/LoremIpsum/LoremIpsum';
-import { useDispatch } from 'react-redux';
-import { OPEN_BANNER } from '../../store/types';
-import { actionCreator } from '../../store/actionCreator';
+import { useSelector } from 'react-redux';
+
 
 export const Home = () => {
 
-    const dispatch = useDispatch();
-    const openBanner = () => {
-        dispatch(actionCreator(OPEN_BANNER, 'Home has opened the banner'))
+    const userState = useSelector((state) => state.user)
+    const userChecker = () => {
+        console.log(userState);
     }
     return (
         <div className='Home'>
             <p>This is the Home Page</p>
             <LoremIpsum />
-            <button onClick={openBanner}>Click Me!</button>
+            <button onClick={userChecker}>Click Me!</button>
         </div>
     )
 }
