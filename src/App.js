@@ -4,6 +4,7 @@ import { Home } from './containers/Home/Home';
 import { Banner } from './components/Banner/Banner';
 import { useSelector } from 'react-redux';
 import { SignUp } from './containers/SignUp/SignUp';
+import { Login } from './containers/Login/Login';
 
 function App() {
   // Hooks
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </div>
   );
