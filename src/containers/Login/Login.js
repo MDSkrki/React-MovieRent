@@ -28,8 +28,8 @@ export const Login = () => {
         dispatch(actionCreator(OPEN_BANNER, `Login was successful!`));
     }
 
-    const logUser = (id) => {
-        dispatch(actionCreator(USER_LOGGED, id))
+    const logUser = (user) => {
+        dispatch(actionCreator(USER_LOGGED, user))
     }
 
     const formSubmit = async (e) => {
