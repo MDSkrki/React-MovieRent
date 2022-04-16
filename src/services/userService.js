@@ -1,15 +1,10 @@
 import jwtDecode from "jwt-decode";
+import { apiConsumer } from "./apiConsumer";
+import { userLoginPath, userSignUpPath } from "./uri";
 
 export const createUser = async (formData) => {
     try {
-        const res = await fetch('http://localhost:4000/api/user/register', {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-        const user = await res.json();
+        const user = await apiConsumer('POST', userSignUpPath, formData);
         return user;
     } catch (error) {
         console.log('User registration failed!');
@@ -18,14 +13,7 @@ export const createUser = async (formData) => {
 
 export const loginUser = async (formData) => {
     try {
-        const res = await fetch('http://localhost:4000/api/user/login', {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-        const {token} = await res.json();
+        const {token} = await apiConsumer('POST', userLoginPath, formData);
         if (token) return tokenDecoder(token);
     } catch (error) {
         console.log('User Login has failed');
