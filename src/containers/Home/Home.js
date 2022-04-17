@@ -1,19 +1,29 @@
 import './Home.css'
-import { LoremIpsum } from '../../components/LoremIpsum/LoremIpsum';
-import { useSelector } from 'react-redux';
+import { getPopularMovies } from '../../services/movieService';
+import { useNavigate } from 'react-router-dom';
+import { useLoadMovies } from '../../hooks/useLoadMovies';
 
 
 export const Home = () => {
 
-    const userState = useSelector((state) => state.user)
-    const userChecker = () => {
-        console.log(userState);
+    // Hooks
+    const loadMovies = useLoadMovies();
+    const navigate = useNavigate();
+
+    const movieLoader = async() => {
+        const popular = await getPopularMovies();
+        loadMovies(popular.results);
     }
+
+    const buttonHandler = async () => {
+        await movieLoader();
+        navigate('/popular');
+    }
+
     return (
         <div className='Home'>
             <p>This is the Home Page</p>
-            <LoremIpsum />
-            <button onClick={userChecker}>Click Me!</button>
+            <button onClick={buttonHandler}>Popular Movies</button>
         </div>
     )
 }
