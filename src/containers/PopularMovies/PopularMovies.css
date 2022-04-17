@@ -1,0 +1,6 @@
+.PopularMovies {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    align-items: center;
+}
