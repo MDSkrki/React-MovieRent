@@ -5,3 +5,4 @@ export const USER_LOGGED = 'USER_LOGGED';
 export const USER_UNLOGGED = 'USER_UNLOGGED';
 
 export const SAVE_POPULAR = 'SAVE_POPULAR';
+export const SAVE_SELECTED_MOVIE = 'SAVE_SELECTED_MOVIE';
