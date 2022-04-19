@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# React Movie-Rent
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- [React Movie-Rent](#react-movie-rent)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Deployment](#deployment)
+  - [Functionality](#functionality)
+    - [Forms](#forms)
+    - [Hooks](#hooks)
+    - [Movies](#movies)
+  - [Pending Tasks](#pending-tasks)
+  - [Thanks](#thanks)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Introduction 
+This project was made for Geekshubs Academy in order to use React with a MongoDB based Backend
 
-### `npm start`
+## Deployment
+The frontEnd is deployed through Amazon Web Services using their AWS Amplify service, while the backend is hosted on Heroku. You can access the app and use it at the following link: [React Movie-Rent](https://master.d1rixknf384fi5.amplifyapp.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Forms
 
-### `npm test`
+Login and SignUp forms are using the following function in order to update automatically their values when the `Input` components send their data: 
+```javascript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const updateForm = (e) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value,
+        })
+    }
+```
 
-### `npm run build`
+In this case we grab the event triggered by the `onBlur` attribute of the input, and sets the desired value to its form field.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Hooks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A hook has been custom created for a PopUp banner. When needed, you just need to instantiate the hook with `const <bannerName> = useBanner();` and you call it as a function, giving a `string` as parameter. The string will represent the message inside the PopUp banner.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Movies
 
-### `npm run eject`
+Movies are gathered from TMDB when accessing the Home page. Every movie can be clicked to see its details and to rent it.
+If you are not logged in, when attempting to rent a movie, you will be redirected to the login page.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Pending Tasks
+- [ ] Make app much more beautiful
+- [ ] Remake backend in order to relate collections properly and ease data access
+- [ ] Find a different solution for inputs instead of onBlur, because using 'Enter' key from keyboards instead of submit in forms can break the data sending due to missing data.
+- [ ] Save more information from movies in order to use them properly
+- [ ] Add movie filtering feature
+- [ ] Add rent dates and timer for the movies to stay unavailable for that user if they rented a movie (so you can't accidentally rent a movie too many times)
+- [ ] Add active validations on inputs based on their types
+- [ ] Transform the `<PopularMovies />` component into `<MovieList />` in order to reuse it for latest, ordered by genre, etc...
+- [ ] Make caroussel-like feature for movieList in order to implement pagination
+- [ ] Add environment variables
+- [ ] Add feature to banner to be able to show some errors with a different color
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Thanks
+- Many thanks to Gonzalo for being an amazing teacher in this journey and inspiring to create better code with attention to Detail
+- Also great thanks to the amazing classmates for their constant support 
