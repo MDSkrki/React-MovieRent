@@ -10,7 +10,8 @@ export const apiConsumer = async (method, uri, body) => {
     }
     try {
         const res = await fetch(uri ,options);
-        return await res.json();
+        const result = await res.json();
+        return result;
     } catch (error) {
         console.log(error)
     }
