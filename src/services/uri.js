@@ -7,3 +7,6 @@ export const userSignUpPath = 'http://localhost:4000/api/user/register';
 
 export const getSingleMovieTMDB = `https://api.themoviedb.org/3/movie/550?api_key=${apiKey}&language=en-US`;
 export const getPopularMoviesTMDB = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+
+export const postRentPath = 'http://localhost:4000/api/rent/';
+export const getRentsPath = 'http://localhost:4000/api/rent/';
