@@ -23,9 +23,8 @@ export const loginUser = async (formData) => {
 const tokenDecoder = (token) => {
     try {
         const user = jwtDecode(token);
-        return {id: user.id, username: user.username};
+        return user;
     } catch (error) {
         console.log(error);
     }
-    
 }

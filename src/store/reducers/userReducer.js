@@ -4,6 +4,7 @@ const initialState = {
     logged: false,
     id: 0,
     username: '',
+    role: '',
 }
 
 export const userReducer = (state = initialState, action) => {
@@ -12,6 +13,7 @@ export const userReducer = (state = initialState, action) => {
         logged: true,
         id: action.payload.id,
         username: action.payload.username,
+        role: action.payload.role,
     }
 
     if (action.type === USER_UNLOGGED) return {
@@ -19,6 +21,7 @@ export const userReducer = (state = initialState, action) => {
         logged: false,
         id: 0,
         username: '',
+        role: '',
     }
     return state;
 }
