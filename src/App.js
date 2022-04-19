@@ -7,6 +7,8 @@ import { SignUp } from './containers/SignUp/SignUp';
 import { Login } from './containers/Login/Login';
 import { Profile } from './containers/Profile/Profile';
 import { PopularMovies } from './containers/PopularMovies/PopularMovies';
+import { MovieDetail } from './containers/MovieDetail/MovieDetail';
+import { Admin } from './containers/Admin/Admin';
 
 function App() {
   // Hooks
@@ -21,6 +23,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/popular' element={<PopularMovies />} />
+        <Route path='/movie/:id' element={<MovieDetail />} />
+        <Route path='/admin' element={<Admin />} />
       </Routes>
     </div>
   );
