@@ -6,8 +6,9 @@ import './Header.css';
 
 export const Header = () => {
 
-    const loggedState = useSelector((state) => state.user.logged)
+    const loggedState = useSelector((state) => state.user.logged);
     const usernameState = useSelector((state) => state.user.username);
+    const userRole = useSelector((state) => state.user.role);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -28,6 +29,7 @@ export const Header = () => {
                 {!loggedState && (<Link to='/login'>Login</Link>)}
                 {loggedState && (<Link to='/profile'>Profile</Link>)}
                 {loggedState && (<p onClick={logoutHandler}>Logout</p>)}
+                {loggedState && userRole === 'admin' && (<Link to='/admin'>Admin</Link>)}
                 <Link to="/signup">Sign Up</Link>
             </nav>
         </header>
